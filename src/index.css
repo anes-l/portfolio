@@ -8,6 +8,11 @@
   box-sizing: border-box;
 }
 
+::selection {
+  background-color: var(--selection-background);
+  color: var(--selection-color);
+}
+
 @layer base {
   :root {
     --background: 222.2 84% 4.9%;
@@ -35,5 +40,13 @@
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
     --radius: 0.5rem;
+
+    --selection-background: hsl(260 80% 90%); /* Light purple for light mode */
+    --selection-color: hsl(260 80% 20%);    /* Dark purple for light mode */
+  }
+
+  .dark {
+    --selection-background: hsl(260 80% 20%); /* Dark purple for dark mode */
+    --selection-color: hsl(260 80% 90%);    /* Light purple for dark mode */
   }
 }

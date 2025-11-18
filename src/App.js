@@ -4,6 +4,7 @@ import React, { useState, Suspense, lazy, useEffect } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { Moon, Sun } from 'lucide-react';
 import { FaWhatsapp, FaLinkedinIn, FaGithub, FaEnvelope, FaBolt, FaWordpress, FaPalette, FaChartBar } from 'react-icons/fa';
+import ContactForm from './components/ContactForm';
 
 // Lazy loading des composants lourds
 const ProjectCardVertical = lazy(() => Promise.resolve({ default: ProjectCardVerticalComponent }));
@@ -11,6 +12,18 @@ const SkillCard = lazy(() => Promise.resolve({ default: SkillCardComponent }));
 
 const Portfolio = () => {
   const [isDark, setIsDark] = useState(true);
+  const [isContactFormOpen, setContactFormOpen] = useState(false);
+  const [isHeaderVisible, setHeaderVisible] = useState(true);
+
+  const openContactForm = () => {
+    setContactFormOpen(true);
+    setHeaderVisible(false);
+  };
+
+  const closeContactForm = () => {
+    setContactFormOpen(false);
+    setHeaderVisible(true);
+  };
 
   // Toggle dark mode
   const toggleDarkMode = () => {
@@ -47,6 +60,9 @@ const Portfolio = () => {
 
   return (
     <div className={`min-h-screen ${isDark ? 'bg-slate-900' : 'bg-slate-50'} ${isDark ? 'text-slate-100' : 'text-slate-900'} overflow-x-hidden relative transition-colors duration-500`} style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+      <AnimatePresence>
+        {isContactFormOpen && <ContactForm isDark={isDark} onClose={closeContactForm} />}
+      </AnimatePresence>
       {/* Enhanced Background with Colors */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className={`absolute inset-0 ${isDark ? 'bg-[radial-gradient(circle_at_50%_50%,rgba(148,163,184,0.12),transparent_70%)]' : 'bg-[radial-gradient(circle_at_50%_50%,rgba(15,23,42,0.12),transparent_70%)]'}`} />
@@ -76,8 +92,8 @@ const Portfolio = () => {
       {/* Enhanced Navigation with Glassmorphism */}
       <motion.nav
         initial={{ opacity: 0, y: -30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+        animate={{ opacity: isHeaderVisible ? 1 : 0, y: isHeaderVisible ? 0 : -100 }}
+        transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
         className="fixed top-4 left-0 right-0 z-50 flex justify-center px-4"
       >
         <motion.div 
@@ -148,7 +164,7 @@ const Portfolio = () => {
               }}
               className="w-2 h-2 bg-gradient-to-r from-emerald-400 to-teal-400 rounded-full shadow-lg shadow-emerald-400/50"
             />
-            <span className={`text-sm font-medium ${isDark ? 'text-emerald-300' : 'text-emerald-700'}`}>Available for freelance work</span>
+            <span className={`text-sm font-medium ${isDark ? 'text-emerald-300' : 'text-emerald-700'}`}>Available for new projects</span>
           </motion.div>
 
           <motion.h1
@@ -169,8 +185,8 @@ const Portfolio = () => {
             className={`text-xl sm:text-2xl md:text-3xl mb-4 font-light ${isDark ? 'text-slate-300' : 'text-slate-700'}`}
           >
             <span className={`${isDark ? 'text-transparent bg-gradient-to-r from-purple-300 to-blue-300 bg-clip-text' : 'text-transparent bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text'}`}>
-              Web Developer
-            </span> & Digital Creator
+              Passionate Developer
+            </span> & Digital Experience Architect
           </motion.p>
 
           <motion.p
@@ -179,15 +195,14 @@ const Portfolio = () => {
             transition={{ delay: 0.9, duration: 1 }}
             className={`text-sm sm:text-base md:text-lg mb-12 max-w-3xl ${isDark ? 'text-slate-400' : 'text-slate-600'} leading-relaxed`}
           >
-            Crafting pixel-perfect digital experiences with cutting-edge technologies. 
-            Specialized in React, WordPress, and creating interfaces that users love.
+            Beyond the code, I design experiences. My mission is to build digital spaces where elegance meets function, transforming simple visits into memorable, engaging experiences that truly captivate.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.1, duration: 0.8 }}
-            className="flex flex-col sm:flex-row gap-4 justify-start items-start"
+            className="flex flex-row gap-4 justify-start items-start"
           >
             <motion.button
               whileHover={{ scale: 1.05, boxShadow: isDark ? '0 20px 50px rgba(139, 92, 246, 0.3)' : '0 20px 50px rgba(139, 92, 246, 0.2)' }}
@@ -283,7 +298,7 @@ const Portfolio = () => {
               <motion.button
                 whileHover={{ scale: 1.05, boxShadow: isDark ? '0 20px 60px rgba(168, 85, 247, 0.4)' : '0 20px 60px rgba(147, 51, 234, 0.3)' }}
                 whileTap={{ scale: 0.98 }}
-                onClick={() => window.location.href = 'mailto:aneslachachi@icloud.com'}
+                onClick={openContactForm}
                 className={`px-10 py-5 ${isDark ? 'bg-gradient-to-r from-purple-500 via-violet-500 to-indigo-500 text-white' : 'bg-gradient-to-r from-purple-600 via-violet-600 to-indigo-600 text-white'} rounded-full font-bold text-lg shadow-2xl ${isDark ? 'shadow-purple-500/30' : 'shadow-purple-600/30'} mb-10 relative overflow-hidden group transition-all duration-500 z-10`}
               >
                 <span className="relative z-10">Get In Touch</span>
@@ -324,7 +339,7 @@ const Portfolio = () => {
       <footer className="py-16 text-center relative z-10">
         <div className={`backdrop-blur-2xl ${isDark ? 'bg-gradient-to-r from-slate-800/40 to-slate-900/40 border-slate-700/60' : 'bg-gradient-to-r from-white/40 to-slate-50/40 border-slate-200/60'} border rounded-full px-8 py-4 inline-block shadow-lg transition-all duration-500`}>
           <p className={`${isDark ? 'text-slate-400' : 'text-slate-600'} text-sm`}>
-            © 2024 Anes Lachachi • Designed & Developed with 🖤
+            © 2025 Anes Lachachi • Designed & Developed with 🖤
           </p>
         </div>
       </footer>

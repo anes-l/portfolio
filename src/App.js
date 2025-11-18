@@ -137,7 +137,7 @@ const Portfolio = () => {
       </motion.nav>
 
       {/* Enhanced Hero Section */}
-      <section id="hero" className="h-screen flex items-end justify-start p-4 md:p-16 pb-16 md:pb-6 lg:pb-8 relative">
+      <section id="hero" className="h-screen flex items-end justify-start p-4 md:p-16 pb-20 md:pb-6 lg:pb-8 relative">
         <div className={`absolute inset-0 ${isDark ? 'bg-gradient-to-b from-transparent via-purple-900/5 to-transparent' : 'bg-gradient-to-b from-transparent via-purple-100/30 to-transparent'}`} />
         
         <motion.div
@@ -208,7 +208,7 @@ const Portfolio = () => {
               whileHover={{ scale: 1.05, boxShadow: isDark ? '0 20px 50px rgba(139, 92, 246, 0.3)' : '0 20px 50px rgba(139, 92, 246, 0.2)' }}
               whileTap={{ scale: 0.98 }}
               onClick={(e) => handleScroll(e, '#projects')}
-              className={`px-8 py-4 backdrop-blur-xl ${isDark ? 'bg-gradient-to-r from-purple-500/20 to-blue-500/20 border-purple-400/40 text-purple-200 hover:from-purple-500/30 hover:to-blue-500/30' : 'bg-gradient-to-r from-purple-400/20 to-blue-400/20 border-purple-400/50 text-purple-700 hover:from-purple-400/30 hover:to-blue-400/30'} border rounded-full font-semibold transition-all duration-300 shadow-lg ${isDark ? 'shadow-purple-500/20' : 'shadow-purple-400/20'}`}
+              className={`px-8 py-4 backdrop-blur-xl select-none ${isDark ? 'bg-gradient-to-r from-purple-500/20 to-blue-500/20 border-purple-400/40 text-purple-200 hover:from-purple-500/30 hover:to-blue-500/30' : 'bg-gradient-to-r from-purple-400/20 to-blue-400/20 border-purple-400/50 text-purple-700 hover:from-purple-400/30 hover:to-blue-400/30'} border rounded-full font-semibold transition-all duration-300 shadow-lg ${isDark ? 'shadow-purple-500/20' : 'shadow-purple-400/20'}`}
             >
               View My Work
             </motion.button>
@@ -217,7 +217,7 @@ const Portfolio = () => {
               whileHover={{ scale: 1.05, boxShadow: isDark ? '0 20px 60px rgba(168, 85, 247, 0.4)' : '0 20px 60px rgba(147, 51, 234, 0.3)' }}
               whileTap={{ scale: 0.98 }}
               onClick={(e) => handleScroll(e, '#contact')}
-              className={`px-8 py-4 ${isDark ? 'bg-gradient-to-r from-purple-500 via-violet-500 to-indigo-500 text-white' : 'bg-gradient-to-r from-purple-600 via-violet-600 to-indigo-600 text-white'} rounded-full font-semibold shadow-2xl ${isDark ? 'shadow-purple-500/30' : 'shadow-purple-600/30'} relative overflow-hidden group transition-all duration-500`}
+              className={`px-8 py-4 select-none ${isDark ? 'bg-gradient-to-r from-purple-500 via-violet-500 to-indigo-500 text-white' : 'bg-gradient-to-r from-purple-600 via-violet-600 to-indigo-600 text-white'} rounded-full font-semibold shadow-2xl ${isDark ? 'shadow-purple-500/30' : 'shadow-purple-600/30'} relative overflow-hidden group transition-all duration-500`}
             >
               <span className="relative z-10">Contact Me</span>
               <motion.div
@@ -299,7 +299,7 @@ const Portfolio = () => {
                 whileHover={{ scale: 1.05, boxShadow: isDark ? '0 20px 60px rgba(168, 85, 247, 0.4)' : '0 20px 60px rgba(147, 51, 234, 0.3)' }}
                 whileTap={{ scale: 0.98 }}
                 onClick={openContactForm}
-                className={`px-10 py-5 ${isDark ? 'bg-gradient-to-r from-purple-500 via-violet-500 to-indigo-500 text-white' : 'bg-gradient-to-r from-purple-600 via-violet-600 to-indigo-600 text-white'} rounded-full font-bold text-lg shadow-2xl ${isDark ? 'shadow-purple-500/30' : 'shadow-purple-600/30'} mb-10 relative overflow-hidden group transition-all duration-500 z-10`}
+                className={`px-10 py-5 select-none ${isDark ? 'bg-gradient-to-r from-purple-500 via-violet-500 to-indigo-500 text-white' : 'bg-gradient-to-r from-purple-600 via-violet-600 to-indigo-600 text-white'} rounded-full font-bold text-lg shadow-2xl ${isDark ? 'shadow-purple-500/30' : 'shadow-purple-600/30'} mb-10 relative overflow-hidden group transition-all duration-500 z-10`}
               >
                 <span className="relative z-10">Get In Touch</span>
                 <motion.div

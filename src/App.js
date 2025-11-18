@@ -137,7 +137,7 @@ const Portfolio = () => {
       </motion.nav>
 
       {/* Enhanced Hero Section */}
-      <section id="hero" className="h-screen flex items-end justify-start p-4 md:p-16 pb-20 md:pb-6 lg:pb-8 relative">
+      <section id="hero" className="h-screen flex items-end justify-start p-4 md:p-16 pb-22 md:pb-6 lg:pb-8 relative">
         <div className={`absolute inset-0 ${isDark ? 'bg-gradient-to-b from-transparent via-purple-900/5 to-transparent' : 'bg-gradient-to-b from-transparent via-purple-100/30 to-transparent'}`} />
         
         <motion.div

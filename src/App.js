@@ -137,7 +137,7 @@ const Portfolio = () => {
       </motion.nav>
 
       {/* Enhanced Hero Section */}
-      <section id="hero" className="h-screen flex items-end justify-start p-8 md:p-16 relative">
+      <section id="hero" className="h-screen flex items-end justify-start p-4 md:p-16 pb-16 md:pb-6 lg:pb-8 relative">
         <div className={`absolute inset-0 ${isDark ? 'bg-gradient-to-b from-transparent via-purple-900/5 to-transparent' : 'bg-gradient-to-b from-transparent via-purple-100/30 to-transparent'}`} />
         
         <motion.div
@@ -171,7 +171,7 @@ const Portfolio = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 1 }}
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl font-black mb-6 tracking-tighter"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-3 sm:mb-6 tracking-tighter"
           >
             <span className={`${isDark ? 'bg-gradient-to-r from-slate-100 via-purple-200 to-blue-200' : 'bg-gradient-to-r from-slate-900 via-purple-800 to-blue-900'} bg-clip-text text-transparent`}>
               Anes L
@@ -182,7 +182,7 @@ const Portfolio = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.7, duration: 1 }}
-            className={`text-xl sm:text-2xl md:text-3xl mb-4 font-light ${isDark ? 'text-slate-300' : 'text-slate-700'}`}
+            className={`text-lg sm:text-xl md:text-2xl mb-2 sm:mb-4 font-light ${isDark ? 'text-slate-300' : 'text-slate-700'}`}
           >
             <span className={`${isDark ? 'text-transparent bg-gradient-to-r from-purple-300 to-blue-300 bg-clip-text' : 'text-transparent bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text'}`}>
               Passionate Developer
@@ -193,7 +193,7 @@ const Portfolio = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.9, duration: 1 }}
-            className={`text-sm sm:text-base md:text-lg mb-12 max-w-3xl ${isDark ? 'text-slate-400' : 'text-slate-600'} leading-relaxed`}
+            className={`text-xs sm:text-sm md:text-base mb-6 sm:mb-8 lg:mb-12 max-w-3xl ${isDark ? 'text-slate-400' : 'text-slate-600'} leading-relaxed`}
           >
             Beyond the code, I design experiences. My mission is to build digital spaces where elegance meets function, transforming simple visits into memorable, engaging experiences that truly captivate.
           </motion.p>

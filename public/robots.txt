@@ -1,3 +1,6 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Disallow:
+
+# Sitemap (update the URL to your production domain)
+Sitemap: https://anesl.vercel.app/sitemap.xml

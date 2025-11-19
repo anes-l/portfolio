@@ -174,7 +174,7 @@ const Portfolio = () => {
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-3 sm:mb-6 tracking-tighter"
           >
             <span className={`${isDark ? 'bg-gradient-to-r from-slate-100 via-purple-200 to-blue-200' : 'bg-gradient-to-r from-slate-900 via-purple-800 to-blue-900'} bg-clip-text text-transparent`}>
-              Anes L
+              Anes Lachachi
             </span>
           </motion.h1>
 

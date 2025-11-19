@@ -174,7 +174,7 @@ const Portfolio = () => {
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-3 sm:mb-6 tracking-tighter"
           >
             <span className={`${isDark ? 'bg-gradient-to-r from-slate-100 via-purple-200 to-blue-200' : 'bg-gradient-to-r from-slate-900 via-purple-800 to-blue-900'} bg-clip-text text-transparent`}>
-              Anes Lachachi
+              Anes L
             </span>
           </motion.h1>
 
@@ -339,7 +339,7 @@ const Portfolio = () => {
       <footer className="py-16 text-center relative z-10">
         <div className={`backdrop-blur-2xl ${isDark ? 'bg-gradient-to-r from-slate-800/40 to-slate-900/40 border-slate-700/60' : 'bg-gradient-to-r from-white/40 to-slate-50/40 border-slate-200/60'} border rounded-full px-8 py-4 inline-block shadow-lg transition-all duration-500`}>
           <p className={`${isDark ? 'text-slate-400' : 'text-slate-600'} text-sm`}>
-            © 2025 Anes Lachachi • Designed & Developed with 🖤
+            © 2025 Anes L • Designed & Developed with 🖤
           </p>
         </div>
       </footer>

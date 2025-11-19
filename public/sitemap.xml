@@ -3,7 +3,32 @@
   <!-- Main entry -->
   <url>
     <loc>https://anesl.vercel.app/</loc>
-    <changefreq>weekly</changefreq>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+  </url>
+  
+  <!-- Projects Section -->
+  <url>
+    <loc>https://anesl.vercel.app/#projects</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Skills Section -->
+  <url>
+    <loc>https://anesl.vercel.app/#skills</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- Contact Section -->
+  <url>
+    <loc>https://anesl.vercel.app/#contact</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>

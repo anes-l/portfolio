@@ -208,7 +208,7 @@ const Portfolio = () => {
               whileHover={{ scale: 1.05, boxShadow: isDark ? '0 20px 50px rgba(139, 92, 246, 0.3)' : '0 20px 50px rgba(139, 92, 246, 0.2)' }}
               whileTap={{ scale: 0.98 }}
               onClick={(e) => handleScroll(e, '#projects')}
-              className={`px-8 py-4 backdrop-blur-xl select-none ${isDark ? 'bg-gradient-to-r from-purple-500/20 to-blue-500/20 border-purple-400/40 text-purple-200 hover:from-purple-500/30 hover:to-blue-500/30' : 'bg-gradient-to-r from-purple-400/20 to-blue-400/20 border-purple-400/50 text-purple-700 hover:from-purple-400/30 hover:to-blue-400/30'} border rounded-full font-semibold transition-all duration-300 shadow-lg ${isDark ? 'shadow-purple-500/20' : 'shadow-purple-400/20'}`}
+              className={`px-8 py-4 backdrop-blur-xl select-none ${isDark ? 'bg-gradient-to-r from-purple-500/20 to-blue-500/20 border-purple-400/40 text-purple-200 hover:from-purple-500/30 hover:to-blue-500/30' : 'bg-gradient-to-r from-purple-400/20 to-blue-400/20 border-purple-400/50 text-purple-700 hover:from-purple-400/30 hover:to-blue-400/30'} border rounded-full font-semibold transition-all duration-300 shadow-lg shadow-purple-500/20`}
             >
               View My Work
             </motion.button>
@@ -217,7 +217,7 @@ const Portfolio = () => {
               whileHover={{ scale: 1.05, boxShadow: isDark ? '0 20px 60px rgba(168, 85, 247, 0.4)' : '0 20px 60px rgba(147, 51, 234, 0.3)' }}
               whileTap={{ scale: 0.98 }}
               onClick={(e) => handleScroll(e, '#contact')}
-              className={`px-8 py-4 select-none ${isDark ? 'bg-gradient-to-r from-purple-500 via-violet-500 to-indigo-500 text-white' : 'bg-gradient-to-r from-purple-600 via-violet-600 to-indigo-600 text-white'} rounded-full font-semibold shadow-2xl ${isDark ? 'shadow-purple-500/30' : 'shadow-purple-600/30'} relative overflow-hidden group transition-all duration-500`}
+              className={`px-8 py-4 select-none ${isDark ? 'bg-gradient-to-r from-purple-500 via-violet-500 to-indigo-500 text-white' : 'bg-gradient-to-r from-purple-600 via-violet-600 to-indigo-600 text-white'} rounded-full font-semibold shadow-2xl shadow-purple-500/30 relative overflow-hidden group transition-all duration-500`}
             >
               <span className="relative z-10">Contact Me</span>
               <motion.div

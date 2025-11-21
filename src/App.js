@@ -6,7 +6,7 @@ import { Moon, Sun } from 'lucide-react';
 import { FaWhatsapp, FaLinkedinIn, FaGithub, FaEnvelope, FaBolt, FaWordpress, FaPalette, FaChartBar } from 'react-icons/fa';
 import ContactForm from './components/ContactForm';
 
-// Lazy loading des composants lourds
+// Lazy load pour optimiser le chargement
 const ProjectCardVertical = lazy(() => Promise.resolve({ default: ProjectCardVerticalComponent }));
 const SkillCard = lazy(() => Promise.resolve({ default: SkillCardComponent }));
 
@@ -25,12 +25,12 @@ const Portfolio = () => {
     setHeaderVisible(true);
   };
 
-  // Toggle dark mode
+  // Bascule dark mode
   const toggleDarkMode = () => {
     setIsDark(!isDark);
   };
 
-  // Apply dark mode class to body
+  // Applique la classe dark au document
   useEffect(() => {
     if (isDark) {
       document.documentElement.classList.add('dark');
@@ -46,7 +46,7 @@ const Portfolio = () => {
     { name: 'Contact', href: '#contact' }
   ];
 
-  // Smooth scroll handler
+  // Scroll smooth vers les sections
   const handleScroll = (e, href) => {
     e.preventDefault();
     const element = document.querySelector(href);
@@ -63,20 +63,20 @@ const Portfolio = () => {
       <AnimatePresence>
         {isContactFormOpen && <ContactForm isDark={isDark} onClose={closeContactForm} />}
       </AnimatePresence>
-      {/* Enhanced Background with Colors */}
+      {/* Background avec effets */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className={`absolute inset-0 ${isDark ? 'bg-[radial-gradient(circle_at_50%_50%,rgba(148,163,184,0.12),transparent_70%)]' : 'bg-[radial-gradient(circle_at_50%_50%,rgba(15,23,42,0.12),transparent_70%)]'}`} />
-        
-        {/* Colored floating orbs */}
-        <div 
+
+        {/* Orbes flottants colorés */}
+        <div
           className={`absolute top-0 left-1/4 w-96 h-96 ${isDark ? 'bg-gradient-to-br from-purple-500/20 to-blue-500/15' : 'bg-gradient-to-br from-purple-400/15 to-blue-400/10'} rounded-full blur-3xl`}
           style={{ animation: 'float 20s ease-in-out infinite' }}
         />
-        <div 
+        <div
           className={`absolute bottom-0 right-1/4 w-96 h-96 ${isDark ? 'bg-gradient-to-br from-emerald-500/15 to-teal-500/20' : 'bg-gradient-to-br from-emerald-400/10 to-teal-400/15'} rounded-full blur-3xl`}
           style={{ animation: 'float 25s ease-in-out infinite reverse' }}
         />
-        <div 
+        <div
           className={`absolute top-1/2 right-1/3 w-80 h-80 ${isDark ? 'bg-gradient-to-br from-pink-500/15 to-rose-500/10' : 'bg-gradient-to-br from-pink-400/10 to-rose-400/8'} rounded-full blur-3xl`}
           style={{ animation: 'float 30s ease-in-out infinite' }}
         />
@@ -89,15 +89,15 @@ const Portfolio = () => {
         }
       `}</style>
 
-      {/* Enhanced Navigation with Glassmorphism */}
+      {/* Navigation glassmorphique */}
       <motion.nav
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: isHeaderVisible ? 1 : 0, y: isHeaderVisible ? 0 : -100 }}
         transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
         className="fixed top-4 left-0 right-0 z-50 flex justify-center px-4"
       >
-        <motion.div 
-          whileHover={{ 
+        <motion.div
+          whileHover={{
             scale: 1.01,
             boxShadow: isDark ? '0 20px 50px rgba(139, 92, 246, 0.2), 0 10px 30px rgba(59, 130, 246, 0.15)' : '0 20px 50px rgba(139, 92, 246, 0.15), 0 10px 30px rgba(59, 130, 246, 0.1)'
           }}
@@ -121,8 +121,8 @@ const Portfolio = () => {
                 {link.name}
               </motion.a>
             ))}
-            
-            {/* Enhanced Dark Mode Toggle with Glassmorphism */}
+
+            {/* Toggle dark/light mode */}
             <motion.button
               onClick={toggleDarkMode}
               whileHover={{ scale: 1.15, rotate: 180 }}
@@ -136,17 +136,17 @@ const Portfolio = () => {
         </motion.div>
       </motion.nav>
 
-      {/* Enhanced Hero Section */}
+      {/* Section Hero */}
       <section id="hero" className="h-screen flex items-end justify-start p-4 md:p-16 pb-20 md:pb-6 lg:pb-8 relative">
         <div className={`absolute inset-0 ${isDark ? 'bg-gradient-to-b from-transparent via-purple-900/5 to-transparent' : 'bg-gradient-to-b from-transparent via-purple-100/30 to-transparent'}`} />
-        
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
           className="text-left max-w-6xl relative z-10"
         >
-          {/* Enhanced Badge with Glassmorphism */}
+          {/* Badge disponibilité */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -154,11 +154,11 @@ const Portfolio = () => {
             className={`inline-flex items-center gap-2 backdrop-blur-2xl ${isDark ? 'bg-gradient-to-r from-emerald-500/20 to-teal-500/20 border-emerald-400/30' : 'bg-gradient-to-r from-emerald-400/20 to-teal-400/20 border-emerald-400/40'} border rounded-full px-5 py-2 mb-8 shadow-xl ${isDark ? 'shadow-emerald-500/20' : 'shadow-emerald-400/20'} transition-all duration-500`}
           >
             <motion.div
-              animate={{ 
+              animate={{
                 rotate: 360,
                 scale: [1, 1.2, 1]
               }}
-              transition={{ 
+              transition={{
                 rotate: { duration: 3, repeat: Infinity, ease: 'linear' },
                 scale: { duration: 2, repeat: Infinity, ease: 'easeInOut' }
               }}
@@ -231,7 +231,7 @@ const Portfolio = () => {
         </motion.div>
       </section>
 
-      {/* Projects Section */}
+      {/* Projets */}
       <Section id="projects" title="Featured Work" isDark={isDark}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
           <Suspense fallback={<LoadingCard isDark={isDark} />}>
@@ -258,14 +258,14 @@ const Portfolio = () => {
         </div>
       </Section>
 
-      {/* Enhanced Skills Section */}
+      {/* Compétences */}
       <Section id="skills" title="Skills" isDark={isDark}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className={`backdrop-blur-2xl ${isDark ? 'bg-gradient-to-br from-slate-800/40 to-slate-900/40 border-slate-700/60' : 'bg-gradient-to-br from-white/40 to-slate-50/40 border-slate-200/60'} border rounded-3xl p-8 lg:p-12 shadow-2xl transition-all duration-500 relative overflow-hidden`}>
-            {/* Colored glow effect */}
+            {/* Effet glow */}
             <div className={`absolute -top-20 -right-20 w-60 h-60 ${isDark ? 'bg-purple-500/20' : 'bg-purple-400/15'} rounded-full blur-3xl`} />
             <div className={`absolute -bottom-20 -left-20 w-60 h-60 ${isDark ? 'bg-blue-500/20' : 'bg-blue-400/15'} rounded-full blur-3xl`} />
-            
+
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 relative z-10">
               <Suspense fallback={<LoadingSkill isDark={isDark} />}>
                 {[
@@ -282,19 +282,19 @@ const Portfolio = () => {
         </div>
       </Section>
 
-      {/* Enhanced Contact Section */}
+      {/* Contact */}
       <Section id="contact" title="Let's Work" isDark={isDark}>
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedCard delay={0.2}>
             <div className={`backdrop-blur-2xl ${isDark ? 'bg-gradient-to-br from-slate-800/40 to-slate-900/40 border-slate-700/60' : 'bg-gradient-to-br from-white/40 to-slate-50/40 border-slate-200/60'} border rounded-3xl p-12 shadow-2xl transition-all duration-500 relative overflow-hidden`}>
-              {/* Colored orbs */}
+              {/* Effets déco */}
               <div className={`absolute top-0 right-0 w-40 h-40 ${isDark ? 'bg-gradient-to-br from-purple-500/30 to-transparent' : 'bg-gradient-to-br from-purple-400/20 to-transparent'} rounded-full blur-2xl`} />
               <div className={`absolute bottom-0 left-0 w-40 h-40 ${isDark ? 'bg-gradient-to-br from-blue-500/30 to-transparent' : 'bg-gradient-to-br from-blue-400/20 to-transparent'} rounded-full blur-2xl`} />
-              
+
               <p className={`text-xl ${isDark ? 'text-slate-300' : 'text-slate-700'} mb-8 leading-relaxed relative z-10`}>
                 Have a project in mind? Let's create something amazing together.
               </p>
-              
+
               <motion.button
                 whileHover={{ scale: 1.05, boxShadow: isDark ? '0 20px 60px rgba(168, 85, 247, 0.4)' : '0 20px 60px rgba(147, 51, 234, 0.3)' }}
                 whileTap={{ scale: 0.98 }}
@@ -335,7 +335,7 @@ const Portfolio = () => {
         </div>
       </Section>
 
-      {/* Enhanced Footer */}
+      {/* Footer */}
       <footer className="py-16 text-center relative z-10">
         <div className={`backdrop-blur-2xl ${isDark ? 'bg-gradient-to-r from-slate-800/40 to-slate-900/40 border-slate-700/60' : 'bg-gradient-to-r from-white/40 to-slate-50/40 border-slate-200/60'} border rounded-full px-8 py-4 inline-block shadow-lg transition-all duration-500`}>
           <p className={`${isDark ? 'text-slate-400' : 'text-slate-600'} text-sm`}>
@@ -445,7 +445,7 @@ const ProjectCardVerticalComponent = ({ title, description, tags, delay, isMobil
       <div className={`absolute -inset-0.5 ${isDark ? 'bg-gradient-to-r from-purple-600 to-blue-600' : 'bg-gradient-to-r from-purple-500 to-blue-500'} rounded-3xl blur opacity-20 transition duration-500`} />
       <div className={`relative backdrop-blur-2xl ${isDark ? 'bg-gradient-to-br from-slate-800/40 to-slate-900/40 border-slate-700/60' : 'bg-gradient-to-br from-white/40 to-slate-50/40 border-slate-200/60'} border rounded-3xl p-8 lg:p-12 shadow-xl overflow-hidden transition-all duration-500`}>
         <div className={`absolute inset-0 opacity-0 transition-opacity duration-500 ${isDark ? 'bg-gradient-to-br from-purple-500/10 to-transparent' : 'bg-gradient-to-br from-purple-400/8 to-transparent'}`} />
-        
+
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center relative z-10">
           <motion.div
             transition={{ duration: 0.3 }}
@@ -492,7 +492,7 @@ const ProjectCardVerticalComponent = ({ title, description, tags, delay, isMobil
                       </div>
                       <div className={`flex-1 mx-4 h-7 ${isDark ? 'bg-slate-700/50' : 'bg-slate-100/50'} rounded-md`} />
                     </div>
-                    
+
                     <div className={`aspect-video ${isDark ? 'bg-gradient-to-br from-purple-500/8 to-blue-500/10' : 'bg-gradient-to-br from-purple-400/8 to-blue-400/10'} relative overflow-hidden`}>
                       <video
                         ref={videoRef}
@@ -518,7 +518,7 @@ const ProjectCardVerticalComponent = ({ title, description, tags, delay, isMobil
             >
               <h3 className={`text-2xl lg:text-3xl font-bold ${isDark ? 'text-slate-100' : 'text-slate-900'} mb-4`}>{title}</h3>
               <p className={`${isDark ? 'text-slate-400' : 'text-slate-600'} mb-6 leading-relaxed`}>{description}</p>
-              
+
               <div className="flex flex-wrap gap-2">
                 {tags.map(tag => (
                   <span key={tag} className={`px-3 py-1 backdrop-blur-xl ${isDark ? 'bg-gradient-to-r from-purple-500/20 to-blue-500/20 border-purple-400/30 text-purple-300' : 'bg-gradient-to-r from-purple-400/20 to-blue-400/20 border-purple-400/40 text-purple-700'} border rounded-full text-xs font-medium transition-all duration-300 hover:scale-105`}>
@@ -549,7 +549,7 @@ const SkillCardComponent = ({ skill, delay, isDark }) => {
     >
       {/* Glow effect */}
       <div className="absolute inset-0 bg-gradient-to-br from-purple-500/0 via-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      
+
       <motion.div
         whileHover={{ rotate: 10, scale: 1.1 }}
         className={`w-16 h-16 mx-auto mb-4 bg-gradient-to-br ${skill.color} rounded-xl flex items-center justify-center text-3xl shadow-lg relative z-10`}
